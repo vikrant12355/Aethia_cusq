@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-card: #ffffff;
+  --color-card-border: #e4e4e7;
+  --color-chestnut: #9a4e1b;
+  --color-chestnut-dark: #8b4513;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #09090b;
+  font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Institutional Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa;
+}
+
+/* High-density Tabular Numbers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom Grid lines & Borders */
+.grid-bg {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.terminal-border {
+  border: 1px solid #e4e4e7;
+}
+
+/* Chestnut Glow Accent */
+.chestnut-badge {
+  background: rgba(154, 78, 27, 0.08);
+  border: 1px solid rgba(154, 78, 27, 0.3);
+  color: #8b4513;
+}
+
+.chestnut-badge-active {
+  background: #8b4513;
+  border: 1px solid #9a4e1b;
+  color: #ffffff;
+}
+
+/* Range input styling for precision sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: #e4e4e7;
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #9a4e1b;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(154, 78, 27, 0.3);
+}
