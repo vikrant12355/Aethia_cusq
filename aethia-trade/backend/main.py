@@ -1,11 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routers import profile, consensus, audit, portfolio
+from backend.routers import profile, consensus, audit, portfolio, blockchain
 
 app = FastAPI(
     title="Aethia Trade API",
-    description="Institutional AI Consensus Gateways & Blockchain Auditing",
+    description="Institutional AI Consensus Gateways & C++20 InvestmentBlockchain Auditing",
     version="1.0.0"
 )
 
@@ -23,6 +23,7 @@ app.include_router(profile.router, prefix="/api")
 app.include_router(consensus.router, prefix="/api")
 app.include_router(audit.router, prefix="/api")
 app.include_router(portfolio.router, prefix="/api")
+app.include_router(blockchain.router, prefix="/api")
 
 @app.get("/")
 def health_check():

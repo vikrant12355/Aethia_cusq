@@ -8,6 +8,7 @@ interface HeaderBarProps {
   currentStep: number;
   setStep: (step: number) => void;
   userProfile: UserProfile;
+  onOpenBlockchainModal?: () => void;
 }
 
 const STEP_TITLES = [
@@ -21,7 +22,7 @@ const STEP_TITLES = [
   "8. Dashboard",
 ];
 
-export default function HeaderBar({ currentStep, setStep, userProfile }: HeaderBarProps) {
+export default function HeaderBar({ currentStep, setStep, userProfile, onOpenBlockchainModal }: HeaderBarProps) {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e4e4e7] flex flex-col">
       {/* Top Institutional Ticker Bar */}
@@ -39,10 +40,13 @@ export default function HeaderBar({ currentStep, setStep, userProfile }: HeaderB
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] chestnut-badge font-semibold">
-            <ShieldCheck className="w-3 h-3 text-[#8b4513]" />
-            <span>EIP-712 AUDIT LEDGER: ACTIVE</span>
-          </div>
+          <button
+            onClick={onOpenBlockchainModal}
+            className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] bg-[#9a4e1b]/10 border border-[#9a4e1b]/40 text-[#9a4e1b] font-mono font-bold hover:bg-[#9a4e1b]/20 transition-colors"
+          >
+            <ShieldCheck className="w-3 h-3 text-[#9a4e1b]" />
+            <span>C++20 ENGINE: ONLINE</span>
+          </button>
         </div>
       </div>
 

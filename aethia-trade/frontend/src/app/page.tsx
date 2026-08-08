@@ -10,10 +10,12 @@ import Step5Explainability from "@/components/Steps/Step5Explainability";
 import Step6HumanApproval from "@/components/Steps/Step6HumanApproval";
 import Step7ExecutionAudit from "@/components/Steps/Step7ExecutionAudit";
 import Step8Dashboard from "@/components/Steps/Step8Dashboard";
+import BlockchainModal from "@/components/BlockchainModal";
 import { UserProfile, LLMStrategyProposal, AuditReceipt, SpecialistMetric, ShapFeature } from "@/types";
 
 export default function Home() {
   const [currentStep, setCurrentStep] = useState<number>(1);
+  const [isBlockchainModalOpen, setIsBlockchainModalOpen] = useState<boolean>(false);
   const [userProfile, setUserProfile] = useState<UserProfile>({
     walletAddress: null,
     isConnected: false,
@@ -121,6 +123,7 @@ export default function Home() {
         currentStep={currentStep}
         setStep={setCurrentStep}
         userProfile={userProfile}
+        onOpenBlockchainModal={() => setIsBlockchainModalOpen(true)}
       />
 
       <main className="flex-1 px-4 py-6 max-w-7xl w-full mx-auto">

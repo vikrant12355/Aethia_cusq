@@ -58,6 +58,9 @@ export interface AuditReceipt {
   timestamp: string;
   blockNumber: number;
   transactionHash: string;
+  cppBlockHash?: string;
+  blake3MerkleRoot?: string;
+  verificationTimeMs?: number;
   stateRoot: string;
   walletSignature: string;
   consensusHash: string;
@@ -65,6 +68,30 @@ export interface AuditReceipt {
   network: string;
   brokerExecutionId: string;
   executionVenue: 'Alpaca Prime' | 'Interactive Brokers Institutional';
+  cppEngineStatus?: string;
+  isNativeCpp?: boolean;
+}
+
+export interface BlockchainNodeStatus {
+  blockHeight: number;
+  pendingTransactions: number;
+  cpuThreads: number;
+  latestBlockHash: string;
+  latestMerkleRoot: string;
+  hashAlgorithm: string;
+  parallelVerification: string;
+  engineStatus: string;
+  isNative: boolean;
+}
+
+export interface BlockchainBenchmarkResult {
+  transactions: number;
+  blockGenerationTimeMs: number;
+  parallelVerificationTimeMs: number;
+  verificationResult: boolean;
+  cpuThreads: number;
+  throughputTps: number;
+  isNative: boolean;
 }
 
 export interface PortfolioPosition {

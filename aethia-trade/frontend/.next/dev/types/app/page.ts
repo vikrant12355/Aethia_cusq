@@ -1,4 +1,4 @@
-// File: /Users/ayushisharma/aethia-trade/frontend/src/app/page.tsx
+// File: /Users/arthikarjee/Downloads/aethia_t/aethia-trade/frontend/src/app/page.tsx
 import * as entry from '../../../../src/app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
